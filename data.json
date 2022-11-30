@@ -1,0 +1,88 @@
+[
+    {
+
+        "img": "https://i.ibb.co/y8dhPRd/xiaomi-12-lite.jpg",
+        "title": "xiaomi-12-lite",
+        "resalePrice": 50,
+        "originalPrice": 60,
+        "category": "xiaomi",
+        "categoryId": 1,
+        "yearsOfUse": 1,
+        "details" : "xiaomi 12 lite used",
+        "location": "Dhaka, Bangladesh",
+        "onerEmail": "alaminadmin@gmail.com",
+        "onerName": "Alamin Admin",
+        "productCondition": "good"
+    },
+    {
+        "img": "https://i.ibb.co/ysmqKWk/xiaomi-12-ultra.jpg",
+        "title": "xiaomi-12-ultra",
+        "resalePrice": 500,
+        "originalPrice": 899,
+        "category": "xiaomi",
+        "categoryId": 1,
+        "yearsOfUse": 2,
+        "details" : "xiaomi 12 ultra used",
+        "location": "Tangail, Bangladesh",
+        "onerEmail": "alaminadmin@gmail.com",
+        "onerName": "Alamin Admin",
+        "productCondition": "good"
+    },
+    {
+        "img": "https://i.ibb.co/WPmGkdZ/samsung-flip-4.jpg",
+        "title": "samsung-flip-4",
+        "resalePrice": 1000,
+        "originalPrice": 2000,
+        "category": "samsung",
+        "categoryId": 2,
+        "yearsOfUse": 1,
+        "details" : "samsung-flip-4 used",
+        "location": "Tangail, Bangladesh",
+        "onerEmail": "alaminadmin@gmail.com",
+        "onerName": "Alamin Admin",
+        "productCondition": "good"
+    },
+    {
+        "img": "https://i.ibb.co/RHc2bwt/samsung-s22-ultra.jpg",
+        "title": "samsung-s22-ultra",
+        "resalePrice": 700,
+        "originalPrice": 1111,
+        "category": "samsung",
+        "categoryId": 2,
+        "yearsOfUse": 2,
+        "details" : "samsung s22 ultra used",
+        "location": "Dhaka, Bangladesh",
+        "onerEmail": "alaminadmin@gmail.com",
+        "onerName": "Alamin Admin",
+        "productCondition": "good"
+    },
+    {
+        "img": "https://i.ibb.co/ZX0R26c/iphone-11.jpg",
+        "title": "iphone-11",
+        "resalePrice": 550,
+        "originalPrice": 800,
+        "category": "iphone",
+        "categoryId": 3,
+        "yearsOfUse": 1,
+        "details" : "iphone-12 used",
+        "location": "Tangail, Bangladesh",
+        "onerEmail": "alaminadmin@gmail.com",
+        "onerName": "Alamin Admin",
+        "productCondition": "good"
+    },
+    {
+        "img": "https://i.ibb.co/YtNYS4m/iphone-12.jpg",
+        "title": "iphone-12",
+        "resalePrice": 600,
+        "originalPrice": 999,
+        "category": "iphone",
+        "categoryId": 3,
+        "yearsOfUse": 2,
+        "details" : "iphone-12 used",
+        "location": "Dhaka, Bangladesh",
+        "onerEmail": "alaminadmin@gmail.com",
+        "onerName": "Alamin Admin",
+        "productCondition": "good"
+    }
+    
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "categoryId": 1,
+        "category": "xiaomi",
+        "img": "https://i.ibb.co/YX7DNbp/Xiaomi.jpg"
+    },
+    {
+        "categoryId": 2,
+        "category": "samsung",
+        "img": "https://i.ibb.co/j3wBFL5/samsung.jpg"
+    },
+    {
+        "categoryId": 3,
+        "category": "iphone",
+        "img": "https://i.ibb.co/1X7vDBk/iphone.jpg"
+    }
+]
