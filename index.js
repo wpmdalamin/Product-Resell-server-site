@@ -29,7 +29,6 @@ function verifyJWT(req, res, next) {
         req.decoded = decoded;
         next();
     })
-
 }
 
 
@@ -42,11 +41,13 @@ async function run() {
 
         const verifyAdmin = async (req, res, next) => {
             const decodedEmail = req.decoded.email;
+            console.log('decodedEmail', decodedEmail)
             const query = { email: decodedEmail };
             const user = await userCollection.findOne(query);
+            console.log('user insite verify Admin', user)
 
             if (user?.role !== 'admin') {
-                return res.status(403).send({ message: 'forbidden access' })
+                return res.status(401).send({ message: 'forbidden access' })
             }
             next();
         }
@@ -89,17 +90,7 @@ async function run() {
 
 
 
-        app.get('/booknow', verifyJWT,  async (req, res) => {
-            const email = req.query.email;
-            const query = { email: email }
-            const booknow = await bookNowCollection.find(query).toArray();
-            res.send(booknow)
-        })
-        app.post('/booknow', async (req, res) => {
-            const data = req.body;
-            const booknow = await bookNowCollection.insertOne(data)
-            res.send(booknow)
-        })
+        
 
 
         app.get('/jwt', async (req, res) => {
@@ -114,7 +105,7 @@ async function run() {
         });
 
 
-        app.get('/users', verifyJWT, async (req, res) => {
+        app.get('/users', verifyJWT, verifyAdmin, async (req, res) => {
             const query = {};
             const user = await userCollection.find(query).toArray()
             res.send(user)
