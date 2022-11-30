@@ -26,7 +26,25 @@ async function run() {
             const products = await productCollection.find(query).toArray();
             res.send(products);
         })
-        
+        app.get('/products', async (req, res) => {
+            const email = req.query.email;
+            const query = { email: email };
+            const products = await productCollection.find(query).toArray();
+            res.send(products);
+        })
+        app.post('/products', async (req, res) => {
+            const data = req.body;
+            const product = await productCollection.insertOne(data)
+            res.send(product);
+        })
+        app.get('/products/:id', async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: ObjectId(id) };
+            const product = await productCollection.findOne(query);
+            res.send(product);
+        })
+
+
 
     }
     finally {
