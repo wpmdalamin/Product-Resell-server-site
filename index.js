@@ -57,9 +57,18 @@ async function run() {
             const products = await productCollection.find(query).toArray();
             res.send(products);
         })
-        app.get('/products', async (req, res) => {
+        app.get('/product', async (req, res) => {
             const email = req.query.email;
-            const query = { email: email };
+
+            const query = { onerEmail: email };
+            const products = await productCollection.find(query).toArray();
+            console.log("onerEmail produts",products)
+            res.send(products);
+        })
+        app.get('/ads-product', async (req, res) => {
+            const advertisement = req.query.advertisement;
+            // console.log(" data ads", data)
+            const query = {advertisement: advertisement };
             const products = await productCollection.find(query).toArray();
             res.send(products);
         })
