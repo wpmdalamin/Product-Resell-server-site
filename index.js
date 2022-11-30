@@ -19,7 +19,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 function verifyJWT(req, res, next) {
     const authHeader = req.headers.authorization;
     if (!authHeader) {
-        return res.status(401).send({message: 'unauthorized access'});
+        return res.status(401).send({ message: 'unauthorized access' });
     }
     const token = authHeader.split(' ')[1];
     jwt.verify(token, process.env.ACCESS_TOKEN, function (err, decoded) {
@@ -62,13 +62,13 @@ async function run() {
 
             const query = { onerEmail: email };
             const products = await productCollection.find(query).toArray();
-            console.log("onerEmail produts",products)
+            console.log("onerEmail produts", products)
             res.send(products);
         })
         app.get('/ads-product', async (req, res) => {
             const advertisement = req.query.advertisement;
             // console.log(" data ads", data)
-            const query = {advertisement: advertisement };
+            const query = { advertisement: advertisement };
             const products = await productCollection.find(query).toArray();
             res.send(products);
         })
@@ -99,7 +99,7 @@ async function run() {
 
 
 
-        app.get('/booknow', verifyJWT,  async (req, res) => {
+        app.get('/booknow', verifyJWT, async (req, res) => {
             const email = req.query.email;
             const query = { email: email }
             const booknow = await bookNowCollection.find(query).toArray();
@@ -129,6 +129,12 @@ async function run() {
             const user = await userCollection.find(query).toArray()
             res.send(user)
         })
+        app.get('/seller', verifyJWT, verifyAdmin, async (req, res) => {
+            const role = req.query.role;
+            const query = { role: role };
+            const user = await userCollection.find(query).toArray()
+            res.send(user)
+        })
         app.get('/user', async (req, res) => {
             const email = req.query.email;
             const query = { email: email };
@@ -139,6 +145,13 @@ async function run() {
             const data = req.body;
             const user = await userCollection.insertOne(data)
             res.send(user)
+        })
+
+        app.delete('/users/:id', async (req, res) => {
+            const id = req.params.id;
+            const filter = { _id: ObjectId(id) }
+            const result = await userCollection.deleteOne(filter)
+            res.send(result)
         })
 
         app.get('/users/admin/:email', async (req, res) => {
