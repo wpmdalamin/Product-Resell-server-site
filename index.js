@@ -90,7 +90,17 @@ async function run() {
 
 
 
-        
+        app.get('/booknow', verifyJWT,  async (req, res) => {
+            const email = req.query.email;
+            const query = { email: email }
+            const booknow = await bookNowCollection.find(query).toArray();
+            res.send(booknow)
+        })
+        app.post('/booknow', async (req, res) => {
+            const data = req.body;
+            const booknow = await bookNowCollection.insertOne(data)
+            res.send(booknow)
+        })
 
 
         app.get('/jwt', async (req, res) => {
