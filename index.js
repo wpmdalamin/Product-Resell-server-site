@@ -124,8 +124,9 @@ async function run() {
         });
 
 
-        app.get('/users', verifyJWT, verifyAdmin, async (req, res) => {
-            const query = {};
+        app.get('/admin-users', verifyJWT, verifyAdmin, async (req, res) => {
+            const role = req.query.role;
+            const query = { role: role };
             const user = await userCollection.find(query).toArray()
             res.send(user)
         })
